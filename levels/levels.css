@@ -1,0 +1,318 @@
+:root {
+    --primary: #6a5af9;
+    --secondary: #4cc9f0;
+    --success: #2ecc71;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --dark: #1a1a2e;
+    --light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'bubble font', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+}
+@font-face {
+  font-family: 'bubble font';
+  src: url('../assets/fonts/BubbleBobble-MVpLp.otf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+/* MENU DROIT STYLISÉ */
+#game-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-left: 2px solid var(--primary);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* En-tête du menu */
+.menu-header {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-header h2 {
+
+    font-family: 'bubble font', sans-serif;
+    font-size: 24px;
+    color: var(--primary);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.menu-header p {
+    font-family: 'bubble font', sans-serif;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Cartes d'informations */
+.info-card {
+
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+}
+
+.info-card h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--secondary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-card h3 i {
+    font-size: 14px;
+}
+
+.info-card span {
+    font-size: 28px;
+    font-weight: 700;
+    display: block;
+}
+
+/* Score et temps spéciaux */
+#score {
+    color: var(--success);
+}
+
+#time {
+    color: var(--warning);
+}
+
+.time-low {
+    color: var(--danger) !important;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Zone équation */
+.equation-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+#equation-display {
+    font-size: 22px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    min-height: 50px;
+    margin-top: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Message */
+.message-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#message {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Boutons */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.menu-btn {
+    background: linear-gradient(135deg, var(--primary) 0%, #8a7cf0 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.menu-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(106, 90, 249, 0.4);
+}
+
+.menu-btn.secondary {
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+}
+
+.menu-btn.success {
+    background: linear-gradient(135deg, var(--success) 0%, #27ae60 100%);
+}
+
+.menu-btn.danger {
+    background: linear-gradient(135deg, var(--danger) 0%, #c0392b 100%);
+}
+
+.bubble {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 22px;
+    color:currentColor;
+    border-radius: 50%;
+    background: rgba(100, 170, 255, 0.25);
+    border: 1px solid rgba(180, 220, 255, 0.4);
+    box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.3), 0 0 10px currentColor;
+    cursor: pointer;
+    
+}
+
+.bubble:hover {
+    transform: scale(1.2);
+    background: #0097e6;
+}
+
+.bonus {
+    background: rgba(0, 255, 0, 0.5) !important;
+    border-color: rgba(0, 255, 0, 0.7) !important;
+}
+
+.danger {
+    background: rgba(255, 0, 0, 0.5) !important;
+    border-color: rgba(255, 0, 0, 0.7) !important;
+}
+
+
+
+.bubble {
+    animation: rise linear infinite;
+}
+
+/* Panneau de fin */
+#end-buttons {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 30px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.end-message {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--light);
+}
+
+.end-buttons-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.end-btn {
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 120px;
+}
+
+.end-btn.primary {
+    background: var(--primary);
+    color: white;
+}
+
+.end-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.end-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #game-menu {
+        width: 280px;
+        padding: 20px 15px;
+    }
+    
+    .buttons-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

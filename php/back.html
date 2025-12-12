@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math With Bubble - Accueil</title>
+<link rel="stylesheet" href="../style.css" />
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        background-image: url("../assets/img/Firefly_Gemini\ Flash.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        text-align: center;
+        color: white;
+        
+        margin-top: 80px;
+    }
+
+    #title {
+        
+        z-index: 2;
+        font-weight: bold;
+        font-size: 100px; 
+        margin-bottom: 60px; 
+        color: rgba(30, 28, 50, 0.8);
+        text-shadow: 
+       2px 2px 0 #fff,
+      -2px 2px 0 #fff,
+       2px -2px 0 #fff,
+      -2px -2px 0 #fff;
+        
+    }
+
+    .btn {
+        display: block;
+        width: 200px;
+        margin: 10px auto;
+        padding: 15px 20px;
+        font-size: 22px;
+        font-weight: bold;
+        color:  #6c5ce7;
+        background: rgba(30, 28, 50, 0.8);
+        border: none;
+        border-radius: 12px;
+       
+        transition: 0.3s;
+        
+    }
+#music-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-image: url('assets/img/nonactive.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+
+    position: fixed;   /* OBLIGATOIRE */
+    top: 15px;         /* distance du haut */
+    left: 15px;        /* distance de la gauche */
+    z-index: 9999;     /* au-dessus de tout */
+}
+
+
+
+    .btn:hover {
+        color:rgba(30, 28, 50, 0.8);
+        transform: scale(1.05);
+        background-color:  #6c5ce7;
+    }
+</style>
+
+</head>
+<body>
+<button id="music-btn" class="music-btn"></button>
+<div class="container">
+    <h1 id="title">Math With Bubble</h1>
+
+    <button class="btn" onclick="goSignIn()">Sign In</button>
+    <button class="btn" onclick="goSignUp()">Sign Up</button>
+</div>
+
+<script>
+    function goSignIn() {
+        window.location.href = "signin.html"; 
+    }
+
+    function goSignUp() {
+        window.location.href = "signup.html";
+    }
+</script>
+<script src="../sound.js"></script>
+
+</body>
+</html>
